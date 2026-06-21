@@ -1,5 +1,5 @@
 class AppApiLinks {
-  static const String kBaseUrl = "http://10.0.2.2/ecommerce/delivery";
+  static const String kBaseUrl = "http://10.0.2.2/ecommerce_backend/delivery";
   static const String kBaseImageUrl = "$kBaseUrl/upload";
 
   static const String kDeliverySignIn = "$kBaseUrl/auth/sign_in.php";

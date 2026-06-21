@@ -4,6 +4,7 @@ import '../../view/auth/sign_in.dart';
 import 'package:flutter/cupertino.dart';
 import '../../view/orders/orders_archieve.dart';
 import '../../view/orders/orders_details.dart';
+import '../../view/orders/orders_tracking.dart';
 import '../../view/settings/settings.dart';
 import '../constants/app_routes_names.dart';
 import 'middlewares/sign_in_middleware.dart';
@@ -25,11 +26,10 @@ final List<GetPage<Widget>> appPages = [
   //   name: AppRoutesNames.kSuccessResetPassword,
   //   page: () => const SuccessResetPassword(),
   // ),
-  // GetPage<Language>(
-  //   name: AppRoutesNames.kLanguage,
-  //   page: () => const Language(),
-  //   middlewares: [LanguageMiddleware()],
-  // ),
+  GetPage<OrdersTracking>(
+    name: AppRoutesNames.kOrdersTracking,
+    page: () => const OrdersTracking(),
+  ),
   GetPage<SignIn>(
     page: () => const SignIn(),
     name: AppRoutesNames.kLogin,

@@ -5,6 +5,8 @@ import '../../../core/class/request_handler_view.dart';
 import '../../../core/functions/translate_data_base.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../../../controller/orders/orders_details_controller.dart';
+import '../../core/constants/app_routes_names.dart';
+import '../auth/widgets/auth/custom_auth_button.dart';
 
 class OrdersDetails extends GetView<OrdersDetailsController> {
   const OrdersDetails({super.key});
@@ -161,6 +163,16 @@ class OrdersDetails extends GetView<OrdersDetailsController> {
                                   controller.googleMapcontroller.complete(ctrl),
                         ),
                       ),
+                    ),
+                  const SizedBox(height: 10),
+                  if (controller.orderModel.ordersDeliveryType != 1)
+                    CustomAuthButton(
+                      text: "Track Order",
+                      onPressed:
+                          () async => await Get.toNamed(
+                            AppRoutesNames.kOrdersTracking,
+                            arguments: {"order": controller.orderModel},
+                          ),
                     ),
                 ],
               ),

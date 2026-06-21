@@ -38,8 +38,7 @@ class OrdersAssignedToDeliveryController extends GetxController {
     requestStatus = RequestStatus.loading;
     update();
     final response = await _ordersAcceptedFromDeliveryData.getOrders(
-      // _services.prefs.getInt("user_id")!.toString(),
-      "0",
+      _services.prefs.getInt("delivery_id")!.toString(),
     );
 
     final result = handlingData(response);
@@ -73,8 +72,7 @@ class OrdersAssignedToDeliveryController extends GetxController {
     requestStatus = RequestStatus.loading;
     update();
     final response = await _ordersDoneData.doneOrder(
-      // _services.prefs.getInt("user_id")!.toString(),
-      "0",
+      _services.prefs.getInt("delivery_id")!.toString(),
       "${orderModel.ordersId}",
       "${orderModel.ordersUserId}",
     );

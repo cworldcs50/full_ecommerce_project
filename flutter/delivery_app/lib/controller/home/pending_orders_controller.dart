@@ -4,6 +4,7 @@ import '../../core/services/services.dart';
 import '../../data/datasource/orders/orders_pending_data.dart';
 import '../../data/models/order_model.dart';
 import '../../core/constants/enums/request_status.dart';
+import '../tracking/tracking_controller.dart';
 
 class PendingOrdersController extends GetxController {
   RequestStatus? requestStatus;
@@ -24,10 +25,7 @@ class PendingOrdersController extends GetxController {
   Future<void> getOrders() async {
     requestStatus = RequestStatus.loading;
     update();
-    final response = await _ordersPendingData.getData(
-      // _services.prefs.getInt("user_id")!.toString(),
-      // "1",
-    );
+    final response = await _ordersPendingData.getData();
 
     final result = handlingData(response);
 
@@ -63,7 +61,8 @@ class PendingOrdersController extends GetxController {
     update();
 
     final response = await _ordersPendingData.approveOrder(
-      deliveryWorkerId: "0",
+      deliveryWorkerId:
+          Get.find<Services>().prefs.getInt("delivery_id")!.toString(),
       userRequestOrderId: "${orderModel.ordersUserId}",
       orderDeliveryType: "${orderModel.ordersDeliveryType}",
       orderId: "${orderModel.ordersId}",
@@ -76,6 +75,9 @@ class PendingOrdersController extends GetxController {
     if (RequestStatus.success == result) {
       if ("success" == response["status"]) {
         requestStatus = null;
+        TrackingController _ = Get.put<TrackingController>(
+          TrackingController(),
+        );
       } else {
         requestStatus = RequestStatus.noData;
       }

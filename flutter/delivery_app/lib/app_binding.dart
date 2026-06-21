@@ -1,13 +1,12 @@
 import 'package:get/get.dart';
 import 'controller/home/home_controller.dart';
-import 'controller/home/pending_orders_controller.dart';
-import 'controller/orders/orders_archieve_controller.dart';
-import 'controller/orders/orders_assigned_to_delivery_controller.dart';
-// import 'controller/orders/orders_assigned_to_delivery_controller.dart';
-import 'controller/orders/orders_details_controller.dart';
 import 'controller/settings/settings_controller.dart';
+import 'controller/home/pending_orders_controller.dart';
+import 'controller/orders/orders_details_controller.dart';
+import 'controller/orders/orders_archieve_controller.dart';
 import 'controller/auth/authentication/login_controller.dart';
 import 'controller/auth/email_controller/check_email_controller.dart';
+import 'controller/orders/orders_assigned_to_delivery_controller.dart';
 import 'controller/auth/password_controller/reset_password_controller.dart';
 import 'controller/auth/password_controller/forget_password_controller.dart';
 import 'controller/auth/email_controller/success_check_email_controller.dart';

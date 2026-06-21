@@ -27,8 +27,7 @@ class OrdersArchieveController extends GetxController {
     requestStatus = RequestStatus.loading;
     update();
     final response = await _ordersArchieveData.getCompletedOrders(
-      // _services.prefs.getInt("user_id")!.toString(),
-      "0",
+      Get.find<Services>().prefs.getInt("delivery_id")!.toString(),
     );
 
     final result = handlingData(response);

@@ -71,9 +71,11 @@ class OrdersDetailsController extends GetxController {
 
     update();
 
-    await Future.delayed(const Duration(seconds: 2), () {
-      requestStatus = null;
-      update();
-    });
+    if (requestStatus != null) {
+      await Future.delayed(const Duration(seconds: 2), () {
+        requestStatus = null;
+        update();
+      });
+    }
   }
 }

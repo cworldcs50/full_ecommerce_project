@@ -23,6 +23,7 @@ class AppRoutesNames {
   static const String kForgetPassword = "/forgetPassword";
   static const String kVerifyCodeSignUp = "/verifyCodeSignUp";
   static const String kAddressAddDetails = "/addressAddPartTwo";
+  static const String kOrdersTracking = "/orderTracking";
   static const String kSuccessCheckEmail = "/successCheckEmail";
   static const String kSuccessResetPassword = "/successResetPassword";
   static const String kForgetPasswordVerifyCode = "/forgetPasswordVerifyCode";
